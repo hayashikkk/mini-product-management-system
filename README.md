@@ -1,30 +1,68 @@
-# Laravel + Livewire Starter Kit
+# Mini Product Management System
 
-## Introduction
+## 概要
 
-Our Laravel + [Livewire](https://livewire.laravel.com) starter kit provides a robust, modern starting point for building Laravel applications with a Livewire frontend.
+Laravel + Livewire で構築したシンプルな商品管理システムです。商品の登録・編集・削除などの基本的なCRUD操作を実装しています。
 
-Livewire is a powerful way of building dynamic, reactive, frontend UIs using just PHP. It's a great fit for teams that primarily use Blade templates and are looking for a simpler alternative to JavaScript-driven SPA frameworks like React and Vue.
+## 技術スタック
 
-This Livewire starter kit utilizes Livewire 3, Laravel Volt (optionally), TypeScript, Tailwind, and the [Flux UI](https://fluxui.dev) component library.
+- **Backend**: Laravel 12
+- **Frontend**: Livewire 3 + Volt
+- **Styling**: Tailwind CSS v4 + Flux UI
+- **Database**: MySQL (XAMPP)
+- **Build Tool**: Vite
 
-If you are looking for the alternate configurations of this starter kit, they can be found in the following branches:
+## 主な機能
 
-- [components](https://github.com/laravel/livewire-starter-kit/tree/components) - if Volt is not selected
-- [workos](https://github.com/laravel/livewire-starter-kit/tree/workos) - if WorkOS is selected for authentication
+- ✅ 商品管理（登録・編集・削除）
+- ✅ 商品一覧表示・検索
+- ✅ 在庫管理
+- ✅ ユーザー認証
+- ✅ ダッシュボード
+- ✅ レスポンシブデザイン
 
-## Official Documentation
+## セットアップ
 
-Documentation for all Laravel starter kits can be found on the [Laravel website](https://laravel.com/docs/starter-kits).
+### 必要要件
+- PHP 8.2+
+- Composer
+- Node.js & npm
 
-## Contributing
+### インストール手順
 
-Thank you for considering contributing to our starter kit! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+# 依存関係のインストール
+composer install
+npm install
 
-## Code of Conduct
+# 環境設定
+cp .env.example .env
+php artisan key:generate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# データベース設定（MySQL）
+# XAMPPでMySQLを起動してからデータベースを作成
+php artisan migrate
 
-## License
+# フロントエンドビルド
+npm run build
 
-The Laravel + Livewire starter kit is open-sourced software licensed under the MIT license.
+# 開発サーバー起動
+php artisan serve
+```
+
+## 開発
+
+```bash
+# 開発環境の起動（並行実行）
+composer dev
+
+# テスト実行
+composer test
+
+# コード整形
+vendor/bin/pint
+```
+
+## スクリーンショット
+
+ダッシュボードで商品の在庫状況を一覧表示し、商品管理画面から簡単に商品情報の登録・編集が可能です。
