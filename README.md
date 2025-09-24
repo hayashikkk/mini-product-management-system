@@ -1,34 +1,22 @@
-# Mini Product Management System
+# 商品管理システム
 
-## 概要
+Laravelで作った商品管理アプリです。商品の登録・編集・削除ができます。
 
-Laravel + Livewire で構築したシンプルな商品管理システムです。商品の登録・編集・削除などの基本的なCRUD操作を実装しています。
+## 使った技術
 
-## 技術スタック
+- Laravel 11
+- MySQL
+- Docker
+- Tailwind CSS
 
-- **Backend**: Laravel 12
-- **Frontend**: Livewire 3 + Volt
-- **Styling**: Tailwind CSS v4 + Flux UI
-- **Database**: MySQL (XAMPP)
-- **Build Tool**: Vite
+## 実装機能
 
-## 主な機能
-
-- ✅ 商品管理（登録・編集・削除）
-- ✅ 商品一覧表示・検索
-- ✅ 在庫管理
-- ✅ ユーザー認証
-- ✅ ダッシュボード
-- ✅ レスポンシブデザイン
+- 商品の登録・編集・削除
+- 商品一覧の表示
+- ユーザー登録・ログイン
+- レスポンシブ対応
 
 ## セットアップ
-
-### 必要要件
-- PHP 8.2+
-- Composer
-- Node.js & npm
-
-### インストール手順
 
 ```bash
 # 依存関係のインストール
@@ -39,26 +27,26 @@ npm install
 cp .env.example .env
 php artisan key:generate
 
-# データベース設定（MySQL）
-# XAMPPでMySQLを起動してからデータベースを作成
+# データベース
 php artisan migrate
-
-# フロントエンドビルド
-npm run build
 
 # 開発サーバー起動
 php artisan serve
 ```
 
-## 開発
+## Docker での起動
 
 ```bash
-# 開発環境の起動（並行実行）
-composer dev
-
-# テスト実行
-composer test
-
-# コード整形
-vendor/bin/pint
+docker-compose up -d
 ```
+
+ブラウザで http://localhost:8000 にアクセス
+
+## 学んだこと
+
+- Laravel の基本的な使い方
+- データベース設計
+- Docker の基本
+- GitHub Actions での自動デプロイ
+
+初心者向けの学習プロジェクトとして作成しました。
